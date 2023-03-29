@@ -1,66 +1,22 @@
-/* Header */
-nav {
-  margin-bottom: 20px;
+/* Styles for the navigation bar */
+.navbar-brand {
+	font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link {
+	color: #333;
+	font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link:hover {
+	color: #666;
 }
 
-/* Main content */
+/* Styles for the main content */
 .container {
-  margin-top: 20px;
+	margin-top: 50px;
 }
 
-h1 {
-  margin-bottom: 20px;
-}
-
-img {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-/* Footer */
+/* Styles for the footer */
 footer {
-  margin-top: 20px;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Mobile phones */
-.card {
-  margin-bottom: 20px;
-}
-
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-body {
-  height: 150px;
-}
-
-.card-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.card-text {
-  margin-bottom: 10px;
-}
-
-/* [Contact form](poe://www.poe.com/_api/key_phrase?phrase=Contact%20form&prompt=Tell%20me%20more%20about%20Contact%20form.) */
-.form-group label {
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  margin-bottom: 10px;
-}
-
-.form-group textarea {
-  resize: none;
-}
-
-.btn-primary {
-  margin-top: 10px;
+	background-color: #ddd;
+	padding: 20px 0;
 }
