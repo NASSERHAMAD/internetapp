@@ -1,3 +1,5 @@
+<!-- index.html -->
+{% extends 'layout.html' %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +36,7 @@
 		</div>
 	</nav>
 	<!-- Main content -->
+	{% block content %}	{% endblock %}
 	<div class="container">
 		<h1>Welcome to My Website</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ante vel ante ullamcorper lacinia. Integer eget congue turpis. Integer a dolor nec elit gravida bibendum. Aenean consectetur odio at turpis bibendum, vel iaculis quam facilisis. Sed a orci quis est bibendum tincidunt. Sed tincidunt, ante ac sollicitudin aliquam, quam nisi facilisis dolor, vel molestie nunc lectus in orci. Curabitur volutpat condimentum magna, at ultrices quam dignissim vel. Integer eget tincidunt quam. Ut et nisl vel velit egestas tincidunt.</p>
@@ -81,4 +84,7 @@
 	<script src="https<!-- Link to Bootstrap JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		</body> </html>
+		</body> </html> 
+
+	
+		
