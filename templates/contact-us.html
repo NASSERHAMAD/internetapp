@@ -38,24 +38,19 @@
 
 	<!-- Main content -->
 	{% block content %}
-	<div class="container">
-		<h1>Contact Us</h1>
-		<form id="contact-form" method="post">
-			<div class="form-group">
-				<label for="name">Name</label>
-				<input type="text" class="form-control" id="name" name="name" required>
-			</div>
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-      <label for="message">Message</label>
-      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      </div>
+	<h1>Contact Us</h1>
+    <form method="post" action="/contact-us">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 	  {% endblock %}
       <!-- Footer -->
       <footer class="bg-light text-center text-lg-start">
