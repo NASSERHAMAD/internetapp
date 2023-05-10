@@ -1,42 +1,23 @@
 <!-- mobiles.html -->
-{% extends 'layout.html' %}
 <!DOCTYPE html>
 <html>
 <head>
+	{% extends "layout.html" %}
+	{% block head %}
 	<title>Mobiles</title>
 	<!-- Link to Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<!-- Link to style.css -->
 	<link rel="stylesheet" href="static\style.css">
 	<!-- Link to mobile-data.js -->
-	<script src="mobile-data.js"></script>
+	<script src="vendor\mobile-data.js"></script>
+
+	{% endblock %}
+
 </head>
 <body>
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">My Website</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="index.html">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about.html">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact-us.html">Contact Us</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Mobiles</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-	{% block content %}
+  <!-- Main Content -->
+  {% block myContent %}
 	<div class="container">
 		<h1>Mobiles</h1>
 		<div class="row">
@@ -82,17 +63,10 @@
 			</script>
 		</div>
 	</div>
-	{% endblock %}
-	<!-- Footer -->
-	<footer class="bg-light text-center text-lg-start">
-		<div class="container p-4">
-			<p>&copy; 2023 My Website</p>
-		</div>
-	</footer>
-
 	<!-- Link to Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	{% endblock myContent %}
 </body>
 </html>

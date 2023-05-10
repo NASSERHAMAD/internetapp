@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% extends "layout.html" %}
+  {% block head %}
+  {{ super() }}
+  <title>Contact Us</title>
+  <!-- Favicon no longer needed -->
+  <!-- <link rel="shortcut icon" type="image/jpg" href="static\images\favicon.ico"/> -->
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Main Content -->
+  {% block myContent %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1>Contact us Page</h1>
+        <p>Here you can find our contact information</p>
+        <div class="container">
+          <!-- Send email using email client -->
+          <div class="row" style="float:left; width: 45%">
+            <div class="col-12">
+              
+              <fieldset style="padding:12px; border: solid; border-width: thin; border-color: #a8a8a8;">
+                <legend id="Legend5" runat="server" visible="true" style="width:auto; margin-bottom: 0px;
+                 font-size: 12px; font-weight: bold; color: #1f497d;">
+                  Or you can fill this form to contact us Using your own email client:
+                </legend> 
+                <div style= "padding:24px;">
+                  <form action="mailto:PB0086@st.ubt.edu.sa" method="POST" enctype="multipart/form-data" name="EmailForm">
+                    Name:<br>
+                    <input type="text" size="25" name="Contact-Name"><br><br>
+                    Email:<br>
+                    <input type="email" size="25" name="Contact-Email"><br><br> 
+                    Enter Your Message Here:<br> 
+                    <textarea name="Contact-Message" rows="6" cols="20">
+                    </textarea><br><br> 
+                    <button type="submit" value="Submit" class="btn">Send</button>
+                  </form>
+                </div>
+              </fieldset>
+
+            </div>
+          </div>
+          <!-- Send email using Flask -->
+          <div class="row" style="float:right; width:45%">
+            <div class="col-12">
+
+              <fieldset style="padding:12px; border: solid; border-width: thin; border-color: #a8a8a8;">
+                <legend id="Legend5" runat="server" visible="true" style="width:auto; margin-bottom: 0px;
+                 font-size: 12px; font-weight: bold; color: #1f497d;">
+                  Or you can fill this form to contact us directly using flask:
+                </legend> 
+                <div style= "padding:24px;">
+                  <form action="{{ url_for('contact_us') }}" method="POST" enctype="multipart/form-data" name="EmailForm">
+                    Name:<br>
+                    <input type="text" size="25" name="Contact-Name"><br><br>
+                    Email:<br>
+                    <input type="email" size="25" name="Contact-Email"><br><br> 
+                    Enter Your Message Here:<br> 
+                    <textarea name="Contact-Message" rows="6" cols="20">
+                    </textarea><br><br> 
+                    <button type="submit" value="Submit" class="btn">Send</button>
+                  </form>
+                </div>
+              </fieldset>  
+
+            </div>
+          </div>          
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% endblock myContent %}
+</body>
+</html>
