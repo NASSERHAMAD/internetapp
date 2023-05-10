@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Mobile Phones - Reqres Data</title>
-    <link rel="stylesheet" href="static\style.css">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about.html">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact.html">Contact Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="mobiles.html">Mobiles</a>
-            </li>
-          </ul>
+<head>
+  {% extends "layout.html" %}
+  {% block head %}
+  {{ super() }}
+  <title>Reqres-data</title>
+  <!-- Favicon no longer needed -->
+  <!-- <link rel="shortcut icon" type="image/jpg" href="static\images\favicon.ico"/> -->
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Main Content -->
+  {% block myContent %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1>Reqres-data Page</h1>
+        <p>this page shows a user's mobiles's data from <code>Reqres-data.js</code></p>
+
+        <button id="myButton" class="btn" >Change</button>
+        <div id="mydiv">
+          <h2 id="user_name">User Name Show Here</h2>
+
+          <table id="table" style="width: 100%">
+            <th>id</th><th>email</th><th>first_name</th><th>last_name</th>
+            <tr>
+                <td id="id"></td>
+                <td id="email"></td>
+                <td id="first_name"></td>
+                <td id="last_name"></td>
+            </tr>
+          </table>
         </div>
-      </nav>
-    </header>
-    <div class="container">
-      <h1>Mobile Phones - Reqres Data</h1>
-      <div id="reqres-container"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("#myButton").click(function (){
+      $.ajax({
+      type: 'GET',
+      data: {},
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      url: 'https://reqres.in/api/users',
+      success:function(data){
+        data.data.forEach(element => {
+            var row = document.createElement("tr");
+            var id = document.createElement('td');
+            var email = document.createElement('td');
+            var first_name = document.createElement('td');
+            var last_name = document.createElement('td');
+
+            id.innerHTML = element.id;
+            email.innerHTML = element.email;
+            first_name.innerHTML = element.first_name;
+            last_name.innerHTML = element.last_name;
+
+            row.appendChild(id);
+            row.appendChild(email);
+            row.appendChild(first_name);
+            row.appendChild(last_name);
+
+            $('#table').append(row);
+        });
+      },
+      error:function(errorMessage)
+      {
+          console.log(errorMessage);
+      }
+    });
+  });
+  </script>
+  {% endblock myContent %}
+  
+</body>
+</html>
