@@ -3,7 +3,6 @@ from postsdata import posts
 
 app = Flask(__name__)
 
-# Page Routes
 @app.route("/")
 def homePagex():
    return render_template('index.html')
@@ -47,8 +46,7 @@ def show_post(post_id):
     else:
         return render_template('404.html'), 404
 
-    
-#to get favicon working on layout instead of html page
+
 import os
 from flask import send_from_directory
 from json import dumps
@@ -66,7 +64,6 @@ def json_posts():
     }
     return dumps(data)
 
-#debug tool
 if __name__ == '__main__':
 	app.run( debug=True )
 
