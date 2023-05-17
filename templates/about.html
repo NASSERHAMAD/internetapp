@@ -1,8 +1,10 @@
-  <!-- about.html -->
-{% extends 'layout.html' %}
+<!-- about.html -->
 <!DOCTYPE html>
 <html>
 <head>
+{% extends "layout.html" %}
+{% block head %}
+{{ super() }}
 	<title>About - My Website</title>
 	<!-- Link to Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,8 +12,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<!-- Link to style.css -->
 	<link rel="stylesheet" href="static\style.css">
+	{% endblock %}
 </head>
 <body>
+	{% block myContent %}
 	<!-- Navigation bar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">My Website</a>
@@ -36,7 +40,6 @@
 		</div>
 	</nav>
 	<!-- Main content -->
-	{% block content %}
 	<div class="container">
 		<h1>About Us</h1>
 		<p>Welcome to our online mobile store, where we offer a wide range of mobile devices and related accessories to meet all your needs. Our mission is to provide our customers with the very best shopping experience by offering high-quality products, excellent customer service, and competitive prices.
@@ -45,7 +48,6 @@
 		<p>At our online mobile store, we believe in putting our customers first, which is why we are constantly striving to improve our products and services. We value your feedback and welcome any suggestions you may have to help us better serve you.</p>
 		<p>Thank you for choosing our online mobile store, and we look forward to helping you find the perfect mobile device and accessories for your needs.</p>
 	</div>
-	{% endblock %}
 	<!-- Footer -->
 	<footer class="bg-light">
 		<div class="container">
@@ -56,5 +58,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	{% endblock myContent %}
 </body>
 </html>

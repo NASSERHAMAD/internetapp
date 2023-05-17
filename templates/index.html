@@ -1,8 +1,12 @@
 <!-- index.html -->
-{% extends 'layout.html' %}
+
 <!DOCTYPE html>
 <html>
 <head>
+{% extends "layout.html" %}
+{% block head %}
+{{ super() }}
+
 	<title>Mobile Store</title>
 	<!-- Link to Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -10,8 +14,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<!-- Link to style.css -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	{% endblock %}
 </head>
 <body>
+	{% block myContent %}
 	<!-- Navigation bar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Mobile Store</a>
@@ -36,7 +42,6 @@
 		</div>
 	</nav>
 	<!-- Main content -->
-	{% block content %}	
 	<div class="container">
 		<h1>Welcome to our phone store</h1>
 		<p>Welcome to Our Phone Store!
@@ -84,7 +89,6 @@
 			</div>
 		</div>
 	</div>
-	{% endblock %}
 	<!-- Footer -->
 	<footer class="bg-light">
 		<div class="container">
@@ -93,10 +97,12 @@
 	</footer>
 	<!-- Link to Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-	<script src="https<!-- Link to Bootstrap JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		</body> </html> 
 
+		{% endblock myContent %}
+	</body> </html> 
+	
+		
 	
 		
