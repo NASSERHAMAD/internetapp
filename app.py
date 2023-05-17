@@ -3,7 +3,7 @@ from postsdata import posts
 
 app = Flask(__name__)
 
-@app.route("/index.html")
+@app.route("/")
 def homePagex():
    return render_template('index.html')
 
@@ -11,7 +11,7 @@ def homePagex():
 def about():
     return render_template('about.html')
         
-@app.route("/index")
+@app.route("/index.html")
 def index():
     return render_template('index.html')
 
