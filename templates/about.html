@@ -1,63 +1,28 @@
-<!-- about.html -->
-<!DOCTYPE html>
-<html>
-<head>
-{% extends "layout.html" %}
-{% block head %}
-{{ super() }}
-	<title>About - My Website</title>
-	<!-- Link to Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- Link to [Font Awesome CSS](poe://www.poe.com/_api/key_phrase?phrase=Font%20Awesome%20CSS&prompt=Tell%20me%20more%20about%20Font%20Awesome%20CSS.) -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<!-- Link to style.css -->
-	<link rel="stylesheet" href="static\style.css">
-	{% endblock %}
-</head>
-<body>
-	{% block myContent %}
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">My Website</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="index.html">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="about.html">About</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact-us.html">Contact Us</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="mobiles.html">Mobiles</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!-- Main content -->
-	<div class="container">
-		<h1>About Us</h1>
-		<p>Welcome to our online mobile store, where we offer a wide range of mobile devices and related accessories to meet all your needs. Our mission is to provide our customers with the very best shopping experience by offering high-quality products, excellent customer service, and competitive prices.
-
-			We understand that buying a new mobile device can be a significant investment, which is why we strive to provide our customers with the most up-to-date information and a wide range of options to choose from. Our team of experts is always on hand to answer any questions you may have and help you make informed decisions about your purchase.</p>
-		<p>At our online mobile store, we believe in putting our customers first, which is why we are constantly striving to improve our products and services. We value your feedback and welcome any suggestions you may have to help us better serve you.</p>
-		<p>Thank you for choosing our online mobile store, and we look forward to helping you find the perfect mobile device and accessories for your needs.</p>
-	</div>
-	<!-- Footer -->
-	<footer class="bg-light">
-		<div class="container">
-			<p>&copy; 2023 My Website</p>
-		</div>
-	</footer>
-	<!-- Link to [Bootstrap JS](poe://www.poe.com/_api/key_phrase?phrase=Bootstrap%20JS&prompt=Tell%20me%20more%20about%20Bootstrap%20JS.) -->
-	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	{% endblock myContent %}
-</body>
-</html>
+ <!-- about.html -->
+ {% extends "layout.html" %}
+  {% block head %}
+  {{ super() }}
+ <!DOCTYPE html>
+ <html>
+ <head>
+	 <title>About - My Website</title>
+	 {% endblock %}
+	 <!-- Link to Bootstrap CSS -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	 <!-- Link to [Font Awesome CSS](poe://www.poe.com/_api/key_phrase?phrase=Font%20Awesome%20CSS&prompt=Tell%20me%20more%20about%20Font%20Awesome%20CSS.) -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	 <!-- Link to style.css -->
+	 <link rel="stylesheet" href="static\style.css">
+ </head>
+ <body>
+	 <!-- Main content -->
+	 {% block myContent %}
+	 <div class="container">
+		 <h1>About Us</h1>
+		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ante vel ante ullamcorper lacinia. Integer eget congue turpis. Integer a dolor nec elit gravida bibendum. Aenean consectetur odio at turpis bibendum, vel iaculis quam facilisis. Sed a orci quis est bibendum tincidunt. Sed tincidunt, ante ac sollicitudin aliquam, quam nisi facilisis dolor, vel molestie nunc lectus in orci. Curabitur volutpat condimentum magna, at ultrices quam dignissim vel. Integer eget tincidunt quam. Ut et nisl vel velit egestas tincidunt.</p>
+		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ante vel ante ullamcorper lacinia. Integer eget congue turpis. Integer a dolor nec elit gravida bibendum. Aenean consectetur odio at turpis bibendum, vel iaculis quam facilisis. Sed a orci quis est bibendum tincidunt. Sed tincidunt, ante ac sollicitudin aliquam, quam nisi facilisis dolor, vel molestie nunc lectus in orci. Curabitur volutpat condimentum magna, at ultrices quam dignissim vel. Integer eget tincidunt quam. Ut et nisl vel velit egestas tincidunt.</p>
+		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non ante vel ante ullamcorper lacinia. Integer eget congue turpis. Integer a dolor nec elit gravida bibendum. Aenean consectetur odio at turpis bibendum, vel iaculis quam facilisis. Sed a orci quis est bibendum tincidunt. Sed tincidunt, ante ac sollicitudin aliquam, quam nisi facilisis dolor, vel molestie nunc lectus in orci. Curabitur volutpat condimentum magna, at ultrices quam dignissim vel. Integer eget tincidunt quam. Ut et nisl vel velit egestas tincidunt.</p>
+	 </div>
+	 {% endblock myContent %}
+ </body>
+ </html>

@@ -3,11 +3,11 @@ from postsdata import posts
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/index.html")
 def homePagex():
    return render_template('index.html')
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template('about.html')
         
@@ -15,15 +15,15 @@ def about():
 def index():
     return render_template('index.html')
 
-@app.route("/contact")
+@app.route("/contact-us.html")
 def contact():
     return render_template('contact.html')
 
-@app.route("/mobiles")
+@app.route("/mobiles.html")
 def mobiles():
     return render_template('mobiles.html')
 
-@app.route("/reqres-data")
+@app.route("/reqres-data.html")
 def reqresData():
     return render_template('reqres-data.html')
 
