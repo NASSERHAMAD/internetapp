@@ -3,28 +3,27 @@ from postsdata import posts
 
 app = Flask(__name__)
 
-# Page Routes
 @app.route("/")
 def homePagex():
    return render_template('index.html')
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template('about.html')
         
-@app.route("/index")
+@app.route("/index.html")
 def index():
     return render_template('index.html')
 
-@app.route("/contact")
+@app.route("/contact-us.html")
 def contact():
     return render_template('contact.html')
 
-@app.route("/mobiles")
+@app.route("/mobiles.html")
 def mobiles():
     return render_template('mobiles.html')
 
-@app.route("/reqres-data")
+@app.route("/reqres-data.html")
 def reqresData():
     return render_template('reqres-data.html')
 
@@ -47,8 +46,7 @@ def show_post(post_id):
     else:
         return render_template('404.html'), 404
 
-    
-#to get favicon working on layout instead of html page
+
 import os
 from flask import send_from_directory
 from json import dumps
@@ -66,56 +64,6 @@ def json_posts():
     }
     return dumps(data)
 
-
-# Setting up Flask-Mail
-from flask_mail import Mail, Message
-from flask import request
-
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-
-app.config['MAIL_USERNAME'] = 'ubttester1@gmail.com'
-app.config['MAIL_PASSWORD'] = 'cjnwhlfllfvkwdtc'
-
-mail = Mail(app)
-
-@app.route('/send_email', methods=['post'])
-def send_reset_email(user_email):
-
-   msg = Message('email title',
-                 sender = 'noreply@demo.com',
-                 recipients = [user_email] )
-
-   msg.body = f'''
-   	Hello { user_email }
-   '''
-   mail.send(msg)
-
-#Implementing flask to the second form of the contact us page
-@app.route('/contact', methods=['POST'])
-def contact_us():
-    name = request.form['Contact-Name']
-    email = request.form['Contact-Email']
-    message = request.form['Contact-Message']
-
-    # Send email using Flask-Mail
-    msg = Message('Contact Us Form Submission',
-                  sender='noreply@demo.com',
-                  recipients=['ubttester1@gmail.com'])
-    msg.body = f'''
-        Name: {name}
-        Email: {email}
-        Message: {message}
-    '''
-    mail.send(msg)
-
-    # Return a success message to the user
-    return 'Thank you for your message!'\
-        '<a href="/contact"> Click here to submit another message.'\
-        '</a> <br> Or click <a href="/index">Home</a> to return to the main page'
-
-#debug tool
 if __name__ == '__main__':
 	app.run( debug=True )
 
